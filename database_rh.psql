@@ -1,0 +1,42 @@
+CREATE TABLE "User"
+(
+    ID SERIAL PRIMARY KEY,
+    Email VARCHAR(255),
+    Password VARCHAR(255),
+    Firstname VARCHAR(255),
+    Lastname VARCHAR(255),
+    BirthdayDate DATE,
+    Adress VARCHAR(255),
+    PostalCode VARCHAR(255),
+    Age INT,
+    Meta JSON,
+    RegistrationDate DATE,
+    Token VARCHAR(255),
+    Role VARCHAR(255)
+);
+CREATE TABLE Department
+(
+    ID SERIAL PRIMARY KEY,
+    Name VARCHAR(255)
+
+);
+CREATE TABLE RequestRH
+(
+    ID SERIAL PRIMARY KEY,
+    UserID INT,
+    Content VARCHAR(255),
+    RegistrationDate DATE,
+    Visibility BOOLEAN,
+    Close BOOLEAN,
+    LastAction DATE,
+    ContentHistory JSON
+);
+CREATE TABLE Event
+(
+    ID SERIAL PRIMARY KEY,
+    Name VARCHAR(255),
+    Date DATE,
+    Description VARCHAR(255),
+    UserID VARCHAR(255),
+    DepartmentID INT
+);
